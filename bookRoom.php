@@ -1,3 +1,4 @@
+<?php include 'includes/function.php'; ?>
 <?php include 'includes/bookRoomHeader.php'; ?>
 
     <!-- Navigation -->
@@ -19,110 +20,71 @@
               <h4 class="card-title">
                 <p class="text-center text-primary personal">Personal Information</p>
               </h4>
+              <?php if (!empty($error)) {?>
+                      <div class="alert alert-danger" role="alert"><?php if (isset($error)) echo $error; ?></div>
+              <?php } ?>
               <p class="card-text">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                   
                   <div class="form-row">
                     <div class="form-group col">
                       <label for="firstName">First Name</label>
-                      <input type="text" class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?> " name="firstName" placeholder="First Name">
-                        <div class="error">
-                          <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                        </div>
+                      <input type="text" class="form-control <?php form($firstName) ?> " name="firstName" placeholder="First Name" value="<?php if(isset($firstName)){echo $firstName;} ?>">
+                       
                     </div>
                     <div class="form-group col">
                       <label for="lastName">Last Name</label>
-                      <input type="text" class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?> " name="lastName" placeholder="Last Name">
-                      <div class="error">
-                        <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                      </div>
+                      <input type="text" class="form-control <?php form($lastName) ?> " name="lastName" placeholder="Last Name" value="<?php if(isset($lastName)){echo $lastName;} ?>">
                     </div>
                   </div>
                   
-
                   <div class="form-row">
                     <div class="form-group col">
                       <label for="email">Email</label>
-                      <input type="text" class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?> " name="email" placeholder="email@example.com">
-                        <div class="error">
-                          <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                        </div>
-                      </div>
+                      <input type="text" class="form-control <?php form($eMail) ?>" name="eMail" placeholder="email@example.com" value="<?php if(isset($eMail)){echo $eMail;} ?>" >
+                    </div>
                     <div class="form-group col">
                       <label for="phoneNumber">Phone Number</label>
-                      <input type="text" class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?> " name="phoneNumber">
-                        <div class="error">
-                          <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                        </div>
-                      </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="form-group col">
-                      <label for="nights">Number of Nights</label>
-                      <input type="number" name="nights" class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?> " min="1" max="100">
-                        <div class="error">
-                          <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                        </div>
-                      </div>
-                    <div class="col">
-                      <label for="nights">Gender</label><br>
-                      <!-- <div class="form-check form-check-inline">
-                        <label for="male"><input class="form-check-input" type="radio" name="male" >Male </label>
-                      </div> -->
-                      <!-- <div class="form-check form-check-inline">
-                        <label for="female"><input class="form-check-input" type="radio" name="female" >Female </label>
-                      </div> -->
-                      <select name="gender" id="" class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?>">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Custom">Custom</option>
-                      </select>
-                      <div class="error">
-                          <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                      </div>
+                      <input type="text" class="form-control <?php form($phoneNumber) ?> " name="phoneNumber" value="<?php if(isset($phoneNumber)){echo $phoneNumber;} ?>" >
                     </div>
                   </div>
 
+                  <div class="form-row">
+                    <div class="form-group col">
+                      <label for="check-in">Check-in Date</label>
+                      <input type="date"  name="checkInDate" class="form-control <?php form($checkInDate) ?>" value="<?php if(isset($checkInDate)){echo $checkInDate;} ?>" >
+                    </div>
+                    <div class="form-group col">
+                      <label for="check-out">Check-out Date</label>
+                      <input type="date" name="checkOutDate" class="form-control <?php form($checkOutDate) ?>" value="<?php if(isset($checkOutDate)){echo $checkOutDate;} ?>" >
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col">
+                      <label for="country">Country</label>
+                      <input type="text" name="country" class="form-control <?php form($country) ?>" value="<?php if(isset($country)){echo $country;} ?>" >
+                    </div>
+                    <div class="col">
+                      <label for="gender">Gender</label>
+                      <select name="gender" id="" class="form-control <?php form($gender) ?>" value="<?php if(isset($gender)) echo $gender; ?>">
+                        <option value="">Choose</option>
+                        <option <?php if(isset($gender) && $gender=="Male"){?> selected <?php } ?> value="Male">Male</option>
+                        <option <?php if(isset($gender) && $gender=="Female"){ ?> selected <?php } ?> value="Female">Female</option>
+                        <option <?php if(isset($gender) && $gender=="Custom"){ ?> selected <?php } ?> value="Custom">Custom</option>
+                      </select>
+                    </div>                    
+                  </div>
+
                   <div class="row">
                     <div class="form-group col">
-                      <label for="address">Residential Address</label>
-                      <textarea class="form-control <?php if (isset($error)) {?>
-                        is-invalid <?php }?> " name="address" placeholder="Address" cols="30" rows="5"></textarea>
-                        <div class="error">
-                          <?php if (isset($error)){
-                            echo $error;
-                          }?>
-                        </div>
-                      </div>
+                      <label for="residentialAddress">Residential Address</label>
+                      <input type="text" class="form-control <?php form($residentialAddress) ?> " name="residentialAddress" value="<?php if(isset($residentialAddress)){echo $residentialAddress;} ?>" placeholder="Address">
+                    </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-primary" name="proceed">Proceed to Payment</button>
+                    <input type="submit" name="submit" class="btn btn-primary form-control">
                   </div>
-
-                    
-                    <?php if (!empty($success)) {?>
-                      <div class="success"><?php if (isset($success)) echo $success; ?></div>
-                    <?php } ?>
-
                 </form>
               </p>
             </div><!-- end of card-body -->

@@ -1,4 +1,4 @@
-<?php include 'class.php'; ?>
+<?php include 'function.php'; ?>
 <?php include 'db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +12,8 @@
 
     <title> SiBliss Hotel </title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap-4.3.1 core CSS -->
+    <link href="vendor/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/2-col-portfolio.css" rel="stylesheet">

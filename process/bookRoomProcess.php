@@ -1,42 +1,42 @@
 <?php 
 
-if (isset($_POST['proceed'])) {
+	include 'db.php';
 	
-	$firstName = $_POST['firstName'];
-	$lastName = $_POST['lastName'];
-	$email = $_POST['email'];
-	$phoneNumber = $_POST['phoneNumber'];
-	$nights = $_POST['nights'];
-	$gender = $_POST['gender'];
-	$address = $_POST['address'];
+
+if (isset($_POST['submit'])) {
+	
+	$firstName = secureInput($_POST['firstName']);
+	$lastName = secureInput($_POST['lastName']);
+	$eMail = secureInput($_POST['eMail']);
+	$phoneNumber = secureInput($_POST['phoneNumber']);
+	$checkInDate = secureInput($_POST['checkInDate']);
+	$checkOutDate = secureInput($_POST['checkOutDate']);
+	$country = secureInput($_POST['country']);
+	$gender = secureInput($_POST['gender']);
+	$residentialAddress = secureInput($_POST['residentialAddress']);
+
+	$checkIn = date_create($_POST['checkInDate']);
+	$checkOut = date_create($_POST['checkOutDate']);
+	
+	$nights = date_diff($checkIn, $checkOut);	
+	$nights->format("%a");
+	// $query="INSERT INTO reservation (firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights ,country, gender, residentialAddress, bookingTime)";
+	//confirmQuery($query);
 
 
 	foreach ($_POST as $key => $value) {
 		if (empty($_POST[$key])) {
-			$error = "This field is required";
+			$error = "All fields are required";
+			break;
 		}
 	}
-	
-	/** Validate Email */
-	if(!isset($error)){
-		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+
+
+	if (empty($error)) {
+		if (!filter_var($eMail, FILTER_VALIDATE_EMAIL)) {
 			$error = "Invalid email";
 		}
 	}
-
-
-
-
-
-
-
-
-	/*Terms and Condition validation*/
-	// if (!isset($error)) {
-	// 	if (!isset($_POST['terms'])) {
-	// 		$error = "Accept terms and Condition to Register";
-	// 	}
-	// }
 
 }
  ?>
