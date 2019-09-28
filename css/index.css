@@ -27,6 +27,7 @@
 }
 .personal{
 	font-family:candara, sans-serif;
+	color:#2962FF;
 }
 .col-md-4{
 	padding-top: 20px;
@@ -44,4 +45,9 @@
 .price{
 	font-weight: bold;
 	font-size: 20px;
+}
+.form-control{
+	border-radius: 500px;
+	font-family:Andalus;
+	font-size: 15px;
 }

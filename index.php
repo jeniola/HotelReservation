@@ -29,20 +29,21 @@
 
         while($row = mysqli_fetch_assoc($result)){
           $roomId = $row['roomId'];
-          $roomPicture = $row['roomPicture'];
+          $roomImage = $row['roomImage'];
           $roomType = $row['roomType'];
           $roomDetails = $row['roomDetails'];
           $roomPrice = $row['roomPrice'];
         
       ?>
       <div class="col-md-4">   
-        <div class="card border-light " style="width: 22rem;">
-          <img class="card-img-top" src="images/<?php echo $roomPicture;?>" alt="Card image cap">
+        <div class="card border-light " style="width: 23rem; height:; ">
+          <img class="card-img-top" src="images/<?php echo $roomImage;?>" alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title"><?php echo $roomType;?></h4>
             <p class="card-text text-center"><?php echo $roomDetails;?></p>
-            <p class="card-text text-center price">&#8358;<?php echo $roomPrice;?></p>
-            <a href="bookRoom.php" class="btn btn-primary ">View More</a>
+            <p class="card-text text-center price">&#8358;<?php echo "$roomPrice/Night";?>
+            <br><a href="bookRoom.php" class="btn btn-primary ">View More</a>
+            </p>
           </div>
         </div>
       </div><!--end of col-md-4 -->
