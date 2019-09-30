@@ -11,16 +11,16 @@
 
     
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" >
 
       <!-- Main Content -->
-      <div id="content">
+      <div id="content" >
           <!-- Topbar -->
             <?php include 'includes/TopNavBar.php'; ?>            
           <!-- End of Topbar -->
         
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color:white;">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -47,6 +47,9 @@
                     include 'includes/addRoom.php';
                     break;
                   
+                  case 'adjustRoom':
+                    include 'includes/editRoom.php';
+                  break;                
                   default:
                     include 'includes/viewAllRooms.php';
                     break;

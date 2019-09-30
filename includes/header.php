@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> SiBliss Hotel </title>
+    <title>  Hotel </title>
 
     <!-- Bootstrap-4.3.1 core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

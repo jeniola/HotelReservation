@@ -8,7 +8,7 @@
 <div class="container 1">
 
       <!-- Page Heading -->
-      <h1 class="my-4">SiBliss
+      <h1 class="my-4">Name here
         <small>Hotel</small>
       </h1>
 
@@ -18,47 +18,73 @@
     </div>
   </div> <!--end of row 1 -->      
 </div> <!-- container 1 -->
-<div class="container-fluid">
-  <div class="container 2">
-      <p class="text-center text-primary availableRooms">Available Rooms<hr class="hr"></p>
-      <!-- <hr class="hr"> -->
-    <div class="row two 2">
-      <?php
-        $query = "SELECT * FROM rooms WHERE roomStatus =  'Available' ";
+  
+  <!-- Start of Container -->
+  <div class="container">
+    
+    <div class="col-md-8">
+    <p class="text-center text-primary availableRooms">Available Rooms<hr class="hr"></p>
+      <hr>
+    </div>    
+    <!-- Start row two -->
+    
+    <?php
+        $query = "SELECT * FROM allRooms WHERE roomStatus =  'available' ";
         $result = mysqli_query($connection, $query);
 
         while($row = mysqli_fetch_assoc($result)){
           $roomId = $row['roomId'];
-          $roomImage = $row['roomImage'];
+          $roomTypeId = $row['roomTypeId'];
           $roomType = $row['roomType'];
           $roomDetails = $row['roomDetails'];
+          $roomImage = $row['roomImage'];
           $roomPrice = $row['roomPrice'];
-        
-      ?>
-      <div class="col-md-4">   
-        <div class="card border-light " style="width: 23rem; height:; ">
-          <img class="card-img-top" src="images/<?php echo $roomImage;?>" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title"><?php echo $roomType;?></h4>
-            <p class="card-text text-center"><?php echo $roomDetails;?></p>
-            <p class="card-text text-center price">&#8358;<?php echo "$roomPrice/Night";?>
-            <br><a href="bookRoom.php" class="btn btn-primary ">View More</a>
+          $roomStatus = $row['roomStatus'];
+          $roomAvailable = $row['roomAvailable'];
+          
+        ?>
+          
+
+    <div class="row two 2">
+      <div class="col-md-8">
+        <!-- <hr> -->
+        <!-- start of row content -->
+        <div class="row">
+          <div class="col-5">
+            <p><img src="images/<?php echo $roomImage; ?>" alt="image"></p>
+          </div> 
+          <div class="col-7">
+            <h4 class=""><?php echo $roomType;?></h4>
+            <p class="detail"><?php echo $roomDetails; ?></p>
+            <p class="price">&#8358;<?php echo $roomPrice; ?>
+              <?php
+                if ($roomAvailable==1) {
+                  echo "<i style='font-size:12px;' class='text-danger textRoom'>($roomAvailable room left!)</i>";
+                }elseif ($roomAvailable ==2) {
+                  echo "<i style='font-size:12px;' class='text-danger textRoom'>($roomAvailable rooms left!)</i>";
+                }elseif ($roomAvailable !=0 && $roomAvailable <=5) {
+                  echo "<i style='font-size:12px;' class='text-warning textRoom'>($roomAvailable rooms left)</i>";      
+                }
+              ?>              
             </p>
-          </div>
+            <!-- <p> -->
+              <a href="bookRoom.php?roomId=<?php echo $roomId; ?>" class="btn btn-primary ">View More</a>
+            <!-- </p> -->
+          </div> 
         </div>
-      </div><!--end of col-md-4 -->
+        <!-- end of row content -->
+        <hr>
+      </div>
+      <!-- end of col-md-8 content -->
+    </div>
+    <!-- end of class two 2 -->    
+  <?php }?>
+  </div>
+  <!-- end of Container-->    
+
+        
       
-      <?php }?>
       
-    </div> <!--end of row 2 -->
-    <div class="row 3">
-      <p></p>
-    </div><!--end of row 2 -->
-  </div><!-- end of container 2-->
-</div>
-
-
-
-    <!-- Footer -->
-    <?php include 'includes/footer.php'; ?>
+      <!-- Footer -->
+      <?php include 'includes/footer.php'; ?>
 

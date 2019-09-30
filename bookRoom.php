@@ -8,7 +8,7 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">SiBlis
+      <h1 class="my-4">name here
         <small>Hotel</small>
       </h1>
 
@@ -91,6 +91,9 @@
           </div><!-- end of card h-100-->
         </div><!--end of col-lg-8-->
       </div> <!-- end of row -->
+      <div class="row">
+      <p></p>
+      </div>
     </div> <!-- end of container -->
 
     <!-- Footer -->
