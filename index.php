@@ -23,7 +23,7 @@
   <div class="container">
     
     <div class="col-md-8">
-    <p class="text-center text-primary availableRooms">Available Rooms<hr class="hr"></p>
+      <p class="text-center text-primary availableRooms">Available Rooms<hr class="hr"></p>
       <hr>
     </div>    
     <!-- Start row two -->
@@ -34,7 +34,6 @@
 
         while($row = mysqli_fetch_assoc($result)){
           $roomId = $row['roomId'];
-          $roomTypeId = $row['roomTypeId'];
           $roomType = $row['roomType'];
           $roomDetails = $row['roomDetails'];
           $roomImage = $row['roomImage'];
@@ -59,11 +58,11 @@
             <p class="price">&#8358;<?php echo $roomPrice; ?>
               <?php
                 if ($roomAvailable==1) {
-                  echo "<i style='font-size:12px;' class='text-danger textRoom'>($roomAvailable room left!)</i>";
+                  echo "<i style='font-size:14px;' class='text-danger textRoom'>($roomAvailable room left!)</i>";
                 }elseif ($roomAvailable ==2) {
-                  echo "<i style='font-size:12px;' class='text-danger textRoom'>($roomAvailable rooms left!)</i>";
-                }elseif ($roomAvailable !=0 && $roomAvailable <=5) {
-                  echo "<i style='font-size:12px;' class='text-warning textRoom'>($roomAvailable rooms left)</i>";      
+                  echo "<i style='font-size:14px;' class='text-danger textRoom'>($roomAvailable rooms left!)</i>";
+                }elseif ($roomAvailable !=0 && $roomAvailable <5) {
+                  echo "<i style='font-size:14px;' class='text-warning textRoom'>($roomAvailable rooms left)</i>";      
                 }
               ?>              
             </p>

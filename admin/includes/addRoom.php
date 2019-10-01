@@ -30,8 +30,8 @@
 
         if(empty($error)){
             $moveImage = move_uploaded_file($roomImageTmp, "../images/$roomImage");
-            $insertQuery = "INSERT INTO allRooms (roomType, roomDetails, roomImage, roomPrice, roomStatus, roomTotal) ";
-            $insertQuery.= "VALUES ('$roomType', '$roomDetails', '$roomImage', '$roomPrice', '$roomStatus', '$roomTotal') ";
+            $insertQuery = "INSERT INTO allRooms (roomType, roomDetails, roomImage, roomPrice, roomStatus, roomTotal, roomAvailable) ";
+            $insertQuery.= "VALUES ('$roomType', '$roomDetails', '$roomImage', '$roomPrice', '$roomStatus', '$roomTotal', '$roomTotal') ";
             $sendInsertQuery = mysqli_query($connection, $insertQuery);
             if (!$sendInsertQuery) {
                 die("QUERY FAILED " . mysqli_error($connection));

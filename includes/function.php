@@ -15,15 +15,3 @@ function secureInput($input){
 }
 ?>
 
-<html>
-<?php 
-    function form($variable){
-        if(isset($_POST['submit']) && empty($variable)){ ?> is-invalid <?php }  
-    }
-
-?>
-</html>
-
-<?php
-
-?>

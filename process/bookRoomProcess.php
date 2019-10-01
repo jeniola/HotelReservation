@@ -1,5 +1,5 @@
 <?php 
-
+	include 'function.php'; 
 	include 'db.php';
 	
 
@@ -20,8 +20,8 @@ if (isset($_POST['submit'])) {
 	
 	$nights = date_diff($checkIn, $checkOut);	
 	$nights->format("%a");
-	// $query="INSERT INTO reservation (firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights ,country, gender, residentialAddress, bookingTime)";
-	//confirmQuery($query);
+	
+	
 
 
 	foreach ($_POST as $key => $value) {
@@ -36,6 +36,17 @@ if (isset($_POST['submit'])) {
 		if (!filter_var($eMail, FILTER_VALIDATE_EMAIL)) {
 			$error = "Invalid email";
 		}
+	}
+
+	if (empty($error)) {
+		if (!is_numeric($phoneNumber)) {
+			$error = "Phone number must be digits";
+		}
+	}
+
+	if (empty($error)) {
+		// $query="INSERT INTO reservations (firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress, bookingTime)";
+		//confirmQuery($query);
 	}
 
 }

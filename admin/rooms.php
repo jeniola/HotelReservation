@@ -47,7 +47,7 @@
                     include 'includes/addRoom.php';
                     break;
                   
-                  case 'adjustRoom':
+                  case 'editRoom':
                     include 'includes/editRoom.php';
                   break;                
                   default:
