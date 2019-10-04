@@ -72,7 +72,6 @@
 
             while($row = mysqli_fetch_assoc($addRoomQuery)){
                 $roomId = $row['roomId'];
-                $roomTypeId = $row['roomTypeId'];
                 $roomType = $row['roomType'];
                 $roomDetails = $row['roomDetails'];
                 $roomImage = $row['roomImage'];
@@ -108,8 +107,8 @@
     <div class="form-group">
         <label for="roomStatus">Room Status</label>
         <select class="form-control" name="roomStatus" id="">
-        <option <?php if(isset($roomStatus) && $roomStatus=="available") { ?> selected <?php } ?> value="available">Available</option>
-        <option <?php if(isset($roomStatus) && $roomStatus=="booked") { ?> selected <?php } ?> value="booked">Booked</option>
+        <option <?php if(isset($roomStatus) && $roomStatus=="available") { ?> selected <?php } ?> value="Available">Available</option>
+        <option <?php if(isset($roomStatus) && $roomStatus=="booked") { ?> selected <?php } ?> value="Booked">Booked</option>
         </select>
     </div>
     <div class="form-group">

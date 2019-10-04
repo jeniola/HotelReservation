@@ -1,4 +1,3 @@
-<?php include 'includes/function.php'; ?>
 <?php include 'includes/bookRoomHeader.php'; ?>
 
     <!-- Navigation -->
@@ -25,6 +24,22 @@
               <?php  } ?>
               <p class="card-text">
                 <form class="users" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <!-- <form class="users" action="bookRoom.php?roomId=<?php //echo $theRoomId; ?>" method="post"> -->
+                <?php 
+                  if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId'] ?>
+                    
+                    <div class="form-group col">
+                      <input type="hidden" name="roomTypeId" class="form-control" value="<?php echo $theRoomId; ?>">
+                    </div>
+
+
+                  <?php 
+
+                  }
+                
+                ?>
+
+
                   
                   <div class="row">
                     <div class="form-group col">
@@ -84,7 +99,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="submit" name="submit" class="btn btn-primary form-control">
+                    <input type="submit" name="payNow" class="btn btn-primary form-control" value="Pay Now">
                   </div>
                 </form>
               </p>

@@ -55,7 +55,7 @@
           <div class="col-7">
             <h4 class=""><?php echo $roomType;?></h4>
             <p class="detail"><?php echo $roomDetails; ?></p>
-            <p class="price">&#8358;<?php echo $roomPrice; ?>
+            <p class="price">&#8358;<?php echo $roomPrice . "/Night"; ?>
               <?php
                 if ($roomAvailable==1) {
                   echo "<i style='font-size:14px;' class='text-danger textRoom'>($roomAvailable room left!)</i>";
@@ -67,7 +67,7 @@
               ?>              
             </p>
             <!-- <p> -->
-              <a href="bookRoom.php?roomId=<?php echo $roomId; ?>" class="btn btn-primary ">View More</a>
+              <a href="bookRoom.php?roomId=<?php echo $roomId; ?>" class="btn btn-primary ">Reserve Room</a>
             <!-- </p> -->
           </div> 
         </div>

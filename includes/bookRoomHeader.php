@@ -1,4 +1,6 @@
-<?php include 'process/bookRoomProcess.php'; ?>
+<?php ob_start();
+  include 'includes/function.php'; 
+  include 'process/bookRoomProcess.php'; ?>
 
 
 <!DOCTYPE html>
