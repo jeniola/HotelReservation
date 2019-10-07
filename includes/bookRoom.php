@@ -11,7 +11,6 @@
               <p class="card-text">
                 <form class="users" action="" method="post" autocomplete="off">
                 <!-- <form class="users" action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"> -->
-                <!-- <form class="users" action="bookRoom.php?roomId=<?php //echo $theRoomId; ?>" method="post"> -->
                 <?php 
                   if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId'] ?>
                     
