@@ -57,3 +57,34 @@
 .text-room{
 	font-size: 20px;
 }
+.autocomplete-items {
+	border-radius: 40px;
+	position: absolute;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	/* top: 100%; */
+	top:inherit;
+	/* left: 0; */
+	left:inherit;
+	/* right: 0; */
+	right:inherit;
+  }
+  .autocomplete-items div {
+	border-radius: 40px;
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+	/*when hovering an item:*/
+	background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	background-color: DodgerBlue !important;
+	color: #ffffff;
+  }

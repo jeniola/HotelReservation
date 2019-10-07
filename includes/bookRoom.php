@@ -1,18 +1,4 @@
-<?php include 'includes/bookRoomHeader.php'; ?>
 
-    <!-- Navigation -->
-    <?php include 'includes/bookRoomNavigation.php'; ?>
-    
-    <!-- Page Content -->
-    <div class="container">
-
-      <!-- Page Heading -->
-      <h1 class="my-4">name here
-        <small>Hotel</small>
-      </h1>
-
-      <div class="row">
-        <div class="col-lg-8">
           <div class="card h-100">
             <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
             <div class="card-body">
@@ -23,7 +9,8 @@
                       <div class="alert alert-danger " role="alert"><?php if (isset($error)) echo $error; ?></div>
               <?php  } ?>
               <p class="card-text">
-                <form class="users" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <form class="users" action="" method="post" autocomplete="off">
+                <!-- <form class="users" action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"> -->
                 <!-- <form class="users" action="bookRoom.php?roomId=<?php //echo $theRoomId; ?>" method="post"> -->
                 <?php 
                   if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId'] ?>
@@ -66,20 +53,24 @@
 
                   <div class="row">
                     <div class="form-group col">
-                    <?php $currentDate = date("Y-m-d");?>
+                    <?php $currentDate = date("Y-m-d");
+                          $tomorrow = strtotime("tomorrow");
+                          $tomorrowDate = date("Y-m-d", $tomorrow);
+                    
+                    ?>
                       <label for="check-in">Check-in Date</label>
                       <input type="date"  name="checkInDate" class="form-control form-control-lg" value="<?php if(isset($checkInDate)){echo $checkInDate;} ?>" min="<?php echo $currentDate; ?>">
                     </div>
                     <div class="form-group col">
                       <label for="check-out">Check-out Date</label>
-                      <input type="date" name="checkOutDate" class="form-control form-control-lg" value="<?php if(isset($checkOutDate)){echo $checkOutDate;} ?>" min="<?php echo $currentDate; ?>" >
+                      <input type="date" name="checkOutDate" class="form-control form-control-lg" value="<?php if(isset($checkOutDate)){echo $checkOutDate;} ?>" min="<?php echo $tomorrowDate; ?>" >
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="form-group col">
+                    <div class="form-group col autocomplete">
                       <label for="country">Country</label>
-                      <input type="text" name="country" class="form-control form-control-lg"  value="<?php if(isset($country)){echo $country;} ?>" placeholder="Country">
+                      <input id="countries" type="text" name="country" class="form-control form-control-lg"  value="<?php if(isset($country)){echo $country;} ?>" placeholder="Country">
                     </div>
                     <div class="col">
                       <label for="gender">Gender</label>
@@ -105,12 +96,4 @@
               </p>
             </div><!-- end of card-body -->
           </div><!-- end of card h-100-->
-        </div><!--end of col-lg-8-->
-      </div> <!-- end of row -->
-      <div class="row">
-      <p></p>
-      </div>
-    </div> <!-- end of container -->
-
-    <!-- Footer -->
-    <?php include 'includes/footer.php'; ?>
+    

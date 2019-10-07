@@ -1,13 +1,12 @@
 <?php 
-	include 'db.php';
+
+// include 'db.php';
 	
 
 if (isset($_POST['payNow'])) {
 	
 	
-	// $roomTypeId = $_POST['roomTypeId'];
-	// echo $roomTypeId;
-
+	$roomTypeId = $_POST['roomTypeId'];
 	$firstName = secureInput($_POST['firstName']);
 	$lastName = secureInput($_POST['lastName']);
 	$eMail = secureInput($_POST['eMail']);
@@ -21,40 +20,50 @@ if (isset($_POST['payNow'])) {
 	$checkIn = date_create($_POST['checkInDate']);
 	$checkOut = date_create($_POST['checkOutDate']);
 	
-	$nights = date_diff($checkIn, $checkOut);	
-	// echo $nights->format("%a");
+	$nightDifference = date_diff($checkIn, $checkOut);	
+	$nights = $nightDifference->format("%a");
 	
 	
 
 
-	// foreach ($_POST as $key => $value) {
-	// 	if (empty($_POST[$key])) {
-	// 		$error = "All fields are required";
-	// 		break;
-	// 	}
-	// }
+	foreach ($_POST as $key => $value) {
+		if (empty($_POST[$key])) {
+			$error = "All fields are required";
+			break;
+		}
+	}
 
 
-	// if (empty($error)) {
-	// 	if (!filter_var($eMail, FILTER_VALIDATE_EMAIL)) {
-	// 		$error = "Invalid email";
-	// 	}
-	// }
+	if (empty($error)) {
+		if (!filter_var($eMail, FILTER_VALIDATE_EMAIL)) {
+			$error = "Invalid email";
+		}
+	}
 
-	// if (empty($error)) {
-	// 	if (!is_numeric($phoneNumber)) {
-	// 		$error = "Phone number must be digits";
-	// 	}
-	// }
+	if (empty($error)) {
+		if (!is_numeric($phoneNumber)) {
+			$error = "Phone number must be digits";
+		}
+	}
 
 	
 
-	// if (empty($error)) {
-		// $query="INSERT INTO reservations (roomType, firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress, bookingTime)";
-		//confirmQuery($query);
-		// $referenceId = "LEXUS" .time()	;
-		// echo $referenceId;	
-	// }
+	if (empty($error)) {
+		$roomTypeQuery = "SELECT * FROM allrooms WHERE roomId = '{$roomTypeId}' ";
+		$sendQuery = mysqli_query($connection, $roomTypeQuery);
+		
+		while ($row = (mysqli_fetch_assoc($sendQuery))) {
+			$theRoomTypeId = $row['roomId'];
+			$roomType = $row['roomType'];
+		}
+
+		$referenceId = "LEX" . time();
+
+		$query="INSERT INTO reservations (roomType, referenceId, bookingTime, firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress) ";
+		$query.= "VALUES ('$roomTypeId', '$referenceId', now(), '$firstName', '$lastName', '$eMail',  '$phoneNumber', '$checkInDate', '$checkOutDate', '$nights', '$country', '$gender', '$residentialAddress')";
+		confirmQuery($query);
+		
+	}
 
 }
  ?>

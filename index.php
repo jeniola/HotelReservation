@@ -67,7 +67,7 @@
               ?>              
             </p>
             <!-- <p> -->
-              <a href="bookRoom.php?roomId=<?php echo $roomId; ?>" class="btn btn-primary ">Reserve Room</a>
+               <a href="bookingRoom.php?roomId=<?php echo $roomId; ?>" class="btn btn-primary ">Reserve Room</a>
             <!-- </p> -->
           </div> 
         </div>

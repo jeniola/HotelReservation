@@ -9,6 +9,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- <script src="vendor/bootstrap-4.3.1/js/bootstrap.min.js"></script> -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- JS controlling Country field -->
+    <script src="js/countries.js"></script>
   </body>
 </html>

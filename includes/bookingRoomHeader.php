@@ -1,4 +1,5 @@
 <?php ob_start();
+  include 'db.php';
   include 'includes/function.php'; 
   include 'process/bookRoomProcess.php'; ?>
 
@@ -21,7 +22,7 @@
     <!-- Custom styles for this template -->
     <link href="css/2-col-portfolio.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-
+    
   </head>
 
   <body>
