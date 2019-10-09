@@ -1,3 +1,7 @@
+.lexus{
+	font-family: 'Allura', 'Aparajita', 'Baskerville Old Face', sans-serif;
+	font-size: 30px;
+}
 .success{
 	background-color:#E8F5E9;
 	color:#2E7D32;
@@ -13,11 +17,14 @@
 	border: 1px solid; */
 }
 .availableRooms{
-	font-family: 'Berlin Sans FB','Albertus', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 25px;
-	padding-top: 10px;
+	position: relative;
+	font-family: 'Tw Cen MT' ,'Berlin Sans FB','Albertus', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 27px;
+	/* padding-top: 10px; */
+	bottom:-15px;
 }
 .hr{
+	padding-top: -2px;
 	width: 300px;
 	background-color:#000000; 
 	height:1px;
@@ -47,22 +54,29 @@
 	font-size: 20px;
 }
 .form-control{
-	border-radius: 500px;
+	border-radius: 200px;
 	font-family:Andalus;
 	font-size: 15px;
+}
+.contact{
+	font-weight: bold;
+	color:#1E88E5;
+	font-size: 20px; 
 }
 .autocomplete-items {
 	position: absolute;
 	border: 1px solid #d4d4d4;
+	/* border-radius: 10px; */
 	border-bottom: none;
 	border-top: none;
 	z-index: 99;
 	/*position the autocomplete items to be the same width as the container:*/
 	top: 100%;
-	left: 0;
-	right: 0;
+	left: 5%;
+	right:5%;
   }
   .autocomplete-items div {
+	border-radius: 5px;
 	padding: 10px;
 	cursor: pointer;
 	background-color: #fff;
@@ -77,3 +91,7 @@
 	background-color: DodgerBlue !important;
 	color: #ffffff;
   }
+.footer{
+	font-family: 'Allura', 'Aparajita', 'Baskerville Old Face', sans-serif;
+	font-size: 22px;
+}

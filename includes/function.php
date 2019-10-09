@@ -15,5 +15,6 @@ function secureInput($input){
     $input = stripslashes($input);
     return $input;
 }
-?>
+
+
 

@@ -23,7 +23,8 @@
   <div class="container">
     
     <div class="col-md-8">
-      <p class="text-center text-primary availableRooms">Available Rooms<hr class="hr"></p>
+      <p class="text-center text-primary availableRooms">Available Rooms</p>
+      <hr class="hr">
       <hr>
     </div>    
     <!-- Start row two -->
@@ -50,7 +51,7 @@
         <!-- start of row content -->
         <div class="row">
           <div class="col-5">
-            <p><img src="images/<?php echo $roomImage; ?>" alt="image"></p>
+            <p><img width="110%" src="images/<?php echo $roomImage; ?>" alt="image"></p>
           </div> 
           <div class="col-7">
             <h4 class=""><?php echo $roomType;?></h4>

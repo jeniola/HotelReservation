@@ -1,6 +1,6 @@
 <footer class="py-5 bg-dark ">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; name here Hotel <?php echo date("Y");?> </p>
+        <p class="m-0 text-center text-white "> <span class="footerr">Lexus Hotel</span> | Copyright &copy; <?php echo date("Y");?> </p>
       </div>
       <!-- /.container -->
 </footer>
@@ -11,5 +11,10 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- JS controlling Country field -->
     <script src="js/countries.js"></script>
+    
+    <!-- script for goolge map -->
+    <!-- <script src="js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script> -->
+
   </body>
 </html>

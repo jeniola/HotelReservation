@@ -1,16 +1,17 @@
 <table  class="table table-bordered table-hover table-responsive text-dark">
     <thead>
+        <!-- <th>Id</th> -->
         <th>Room Type</th>
         <th>Reference ID</th>
         <th>Booking Time</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Phone Number</th>
+        <th>Contact</th>
         <th>Check-in-Date</th>
         <th>Check-out-Date</th>
         <th>Nights</th>
-        <th>C-in Time</th>
-        <th>C-out Time</th>
+        <th>Check-in -Time</th>
+        <th>Check-out-Time</th>
         <th>Country</th>
         <th>Gender</th>
         <th>Address</th>
@@ -51,6 +52,7 @@
             
             
             echo "<tr>";
+            // echo "<td>$id</td>";
             echo "<td>$roomType</td>";
             echo "<td>$referenceId</td>";
             echo "<td>$bookingTime</td>";

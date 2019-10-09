@@ -4,19 +4,19 @@
         <th>Reference ID</th>
         <th>Booking Date/Time</th>
         <th>Email</th>
-        <th>Check-in-Date</th>
-        <th>Check-out-Date</th>
+        <th>Check-In-Date</th>
+        <th>Check-Out-Date</th>
         <th>Nights</th>
-        <th>In Time</th>
-        <th>Out Time</th>
+        <th>Check-In- Time</th>
+        <th>Check-Out-Time</th>
         <th>Payment Status</th>
-        <th>Entry</th>
-        <th>Exit</th>
+        <th>Check-in</th>
+        <th>Check-out</th>
         </th>
     </thead>
     <tbody>
         <?php
-        $query = "SELECT * FROM reservations WHERE paymentStatus = 'paid' && hasCheckedOut = 'no' ORDER BY id DESC ";
+        $query = "SELECT * FROM reservations WHERE paymentStatus = 'Paid' && hasCheckedOut = 'no' ORDER BY id DESC ";
 
         $selectRooms = mysqli_query($connection, $query);
         if (!$selectRooms) {

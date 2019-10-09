@@ -88,3 +88,6 @@
 	background-color: DodgerBlue !important;
 	color: #ffffff;
   }
+  a:hover, a:link{
+	text-decoration: none;  
+  }

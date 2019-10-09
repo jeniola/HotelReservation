@@ -59,9 +59,9 @@ if (isset($_POST['payNow'])) {
 
 		$referenceId = "LEX" . time();
 
-		$query="INSERT INTO reservations (roomType, referenceId, bookingTime, firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress) ";
-		$query.= "VALUES ('$roomTypeId', '$referenceId', now(), '$firstName', '$lastName', '$eMail',  '$phoneNumber', '$checkInDate', '$checkOutDate', '$nights', '$country', '$gender', '$residentialAddress')";
-		confirmQuery($query);
+		// $query="INSERT INTO reservations (roomType, referenceId, bookingTime, firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress) ";
+		// $query.= "VALUES ('$roomTypeId', '$referenceId', now(), '$firstName', '$lastName', '$eMail',  '$phoneNumber', '$checkInDate', '$checkOutDate', '$nights', '$country', '$gender', '$residentialAddress')";
+		// confirmQuery($query);
 		
 	}
 
