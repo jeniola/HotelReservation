@@ -9,10 +9,12 @@ function confirmQuery($query){
 }
 
 function secureInput($input){
-    
+    global $connection;
+    $input = mysqli_real_escape_string($connection, $input);
     $input = trim($input);
     $input = htmlspecialchars($input);
     $input = stripslashes($input);
+    
     return $input;
 }
 

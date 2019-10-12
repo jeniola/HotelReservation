@@ -24,9 +24,6 @@
         $roomStatus = $_POST['roomStatus'];
         $roomTotal = $_POST['roomTotal'];
         
-        if(empty($error)){
-            $success = "Room Added Successfully";
-        }
 
         if(empty($error)){
             $moveImage = move_uploaded_file($roomImageTmp, "../images/$roomImage");
@@ -35,6 +32,8 @@
             $sendInsertQuery = mysqli_query($connection, $insertQuery);
             if (!$sendInsertQuery) {
                 die("QUERY FAILED " . mysqli_error($connection));
+            }else {
+                $success = "Room Added <a href='rooms.php'>View Rooms</a>";
             }
 
 

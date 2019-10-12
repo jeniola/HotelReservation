@@ -24,7 +24,29 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Rooms </h1>
+            <h1 class="h3 mb-0 text-gray-800">
+            <?php
+                if (isset($_GET['source'])) {
+                  $title = $_GET['source'];
+                }else{
+                   $title = "" ;
+                }
+                switch ($title) {
+                  case 'addRoom':
+                    echo "Add Room";
+                    break;
+
+                  case 'editRoom':
+                    echo "Edit Room";
+                    break;
+                  
+                  default:
+                    echo "Room";
+                    break;
+                }
+              
+              ?>                
+          </h1>
           </div>
             <hr>
 

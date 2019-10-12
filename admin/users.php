@@ -1,6 +1,5 @@
 <?php
   include 'includes/adminHeader.php';
-
 ?>
 
 <!-- Page Wrapper -->
@@ -25,26 +24,29 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">
-            <?php
+            <h1 class="h3 mb-0 text-gray-800">  
+              <?php
                 if (isset($_GET['source'])) {
                   $title = $_GET['source'];
                 }else{
                    $title = "" ;
                 }
                 switch ($title) {
-                  case 'currentReservation':
-                    echo "Current Reservation";
+                  case 'addUser':
+                    echo "Add User";
                     break;
 
+                  case 'editUser':
+                    echo "Edit User";
+                    break;
+                  
                   default:
-                    echo "Rooms";
+                    echo "Users";
                     break;
                 }
               
-              ?>                
-            
-          </h1>
+              ?>  
+            </h1>
           </div>
             <hr>
 
@@ -55,28 +57,27 @@
             <!-- Content Column col-lg-6 mb-4-->
             <div class="col-lg">    
               <?php
-
               if (isset($_GET['source'])) {
                 $source = $_GET['source'];
               }else{
-                $source = "";
+                $source="";
               }
+
 
               switch ($source) {
-                case 'currentReservation':
-                  include 'includes/currentReservations.php';
-                  break;
-                
-                default:
-                  include 'includes/allReservations.php';
-                  break;
-              }
-
-
-
-                
-
-                    
+                  case 'addUser':
+                    include 'includes/addUser.php';
+                    break;
+                  
+                  case 'editUser':
+                    include 'includes/editUser.php';
+                  break;                
+                  default:
+                    include 'includes/viewAllUsers.php';
+                    break;
+                }
+              
+              
               ?>
               
             </div>

@@ -51,7 +51,7 @@
 }
 .form-control{
 	border-radius: 500px;
-	font-family:Andalus;
+	font-family: Calibri, Candara, 'Tw Cen MT', 'Abel', sans-serif;
 	font-size: 15px;
 }
 .text-room{
@@ -91,3 +91,9 @@
   a:hover, a:link{
 	text-decoration: none;  
   }
+ 
+label{
+	color:#000 !important;
+	font-weight: 500;
+
+}

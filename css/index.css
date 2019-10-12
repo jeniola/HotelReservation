@@ -1,6 +1,6 @@
 .lexus{
 	font-family: 'Allura', 'Aparajita', 'Baskerville Old Face', sans-serif;
-	font-size: 30px;
+	font-size: 23px;
 }
 .success{
 	background-color:#E8F5E9;
@@ -18,9 +18,9 @@
 }
 .availableRooms{
 	position: relative;
-	font-family: 'Tw Cen MT' ,'Berlin Sans FB','Albertus', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 27px;
-	/* padding-top: 10px; */
+	font-family: candara, 'Tw Cen MT' ,'Berlin Sans FB','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color:#0277BD;
+	font-size: 20px;
 	bottom:-15px;
 }
 .hr{
@@ -34,14 +34,15 @@
 }
 .personal{
 	font-family:candara, sans-serif;
-	color:#2962FF;
+	color:#0277BD;
+	font-size: 20px;
 }
 .col-md-4{
 	padding-top: 20px;
 }
 .card {
 	border-radius: 20px;
-	box-shadow: 5px 5px 5px #777777;
+	box-shadow: 5px 5px 10px #777777;
 }
 .card-img-top{
 	border-radius: 8px;
@@ -55,13 +56,14 @@
 }
 .form-control{
 	border-radius: 200px;
-	font-family:Andalus;
+	font-family:  candara,'Tw Cen MT', 'Abel', 'Candara', sans-serif;
 	font-size: 15px;
 }
-.contact{
-	font-weight: bold;
-	color:#1E88E5;
-	font-size: 20px; 
+.login, .contact{
+	font-family:candara, sans-serif;
+	color:#0277BD;
+	font-size: 20px;
+	
 }
 .autocomplete-items {
 	position: absolute;
@@ -94,4 +96,8 @@
 .footer{
 	font-family: 'Allura', 'Aparajita', 'Baskerville Old Face', sans-serif;
 	font-size: 22px;
+}
+label{
+	color:#000;
+	font-weight: 500;
 }

@@ -42,7 +42,7 @@
                   <div class="row">
                     <div class="form-group col">
                       <label for="email">Email</label>
-                      <input type="text" class="form-control form-control-lg" name="eMail" placeholder="email@example.com" value="<?php if(isset($eMail)){echo $eMail;} ?>" >
+                      <input type="text" class="form-control form-control-lg" name="eMail" placeholder="you@domain.com" value="<?php if(isset($eMail)){echo $eMail;} ?>" >
                     </div>
                     <div class="form-group col">
                       <label for="phoneNumber">Phone Number</label>

@@ -14,7 +14,43 @@ ob_start();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Admin </title>
+  <title>  
+  <?php
+                if (isset($_GET['source'])) {
+                  $title = $_GET['source'];
+                }else{
+                   $title = "" ;
+                }
+                switch ($title) {
+                  case 'currentReservation':
+                    echo "Current Reservation | Admin";
+                    break;
+                  
+                  case 'addUser';
+                    echo "Add User | Admin";
+                    break;
+                  
+                  case 'addRoom';
+                    echo "Add Room | Admin";
+                    break;
+
+                  case 'editRoom';
+                    echo "Edit Room | Admin";
+                    break;
+                  
+                  case 'editUser';
+                    echo "Edit User | Admin";
+                    break;
+
+
+                  default:
+                    echo "Admin";
+                    break;
+                }
+              
+              ?>                
+
+  </title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

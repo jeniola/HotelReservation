@@ -7,9 +7,7 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">name here
-        <small>Hotel</small>
-      </h1>
+      <h1 class="my-4"></h1>
 
       <div class="row">
         <div class="col-lg-8">

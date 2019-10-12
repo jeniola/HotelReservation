@@ -8,10 +8,10 @@
     <div class="container">
         <h1 class="my-4"></h1>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <div id="googleMap" style="width:100%;height:400px;"></div>
             </div>
-            <div class="col-8">
+            <div class="col-6">
                 <br>
                 <?php
                     if (isset($_POST['submit'])) {
@@ -66,16 +66,16 @@
 
                         <form action="" class="" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" name="fullname" placeholder=" Full Name" value="<?php if(isset($fullname)){echo $fullname;}?>" >
+                                <input type="text" class="form-control form-control-lg" name="fullname" placeholder="Full Name" value="<?php if(isset($fullname)){echo $fullname;}?>" >
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" name="email" placeholder=" Email" value="<?php if(isset($email)){echo $email;}?>" >
+                                <input type="text" class="form-control form-control-lg" name="email" placeholder="Email" value="<?php if(isset($email)){echo $email;}?>" >
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" name="subject" placeholder=" Subject" value="<?php if(isset($subject)){echo $subject;}?>" >
+                                <input type="text" class="form-control form-control-lg" name="subject" placeholder="Subject" value="<?php if(isset($subject)){echo $subject;}?>" >
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control form-control-lg message" name="message" id="" cols="" rows="3" placeholder=" Leave a Message"></textarea>
+                                <textarea class="form-control form-control-lg message" name="message" id="" cols="" rows="3" placeholder="Leave a Message"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="form-control btn btn-primary" name="submit">
@@ -86,11 +86,12 @@
                 <!-- end of card -->
             </div>
             <!-- end of col -->
+            <div class="col-3"></div>
         </div>
         <!-- end of row -->
     </div>
       <!-- end of container  -->
       <!-- Footer -->
-      <br>
-      <?php include 'includes/footer.php'; ?>
+      <br><br>
+      <?php include 'includes/loginFooter.php'; ?>
 
