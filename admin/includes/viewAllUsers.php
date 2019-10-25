@@ -38,7 +38,7 @@
             ?>
                 <form action="" method="post">
                     <div class="form-group">
-                        <input type="hidden" name="theRoomId" class="form-control" value="<?php echo $userId; ?>">
+                        <input type="hidden" name="theUserId" class="form-control" value="<?php echo $userId; ?>">
                     </div>
                 
             <?php
@@ -73,10 +73,9 @@
             }
 
             if (isset($_POST['deleteUser'])) {
-                $theUserId = $_POST['userId'];
-                $deleteUserQuery = "DELETE FROM users WHERE userId = '{$theUserId}' ";
-                $sendDeleteUserQuery = mysqli_query($connection, $deleteUserQuery) ;
-                confirmQuery($makeAdminQuery);
+                $deleteUserId = $_POST['theUserId'];
+                $deleteUserQuery = "DELETE FROM users WHERE userId = '{$deleteUserId}' ";
+                confirmQuery($deleteUserQuery);
                 header("Location: users.php");
             }
         

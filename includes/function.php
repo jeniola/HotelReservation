@@ -6,6 +6,7 @@ function confirmQuery($query){
     if (!$result) {
         die("QUERY FAILED" . mysqli_error($connection)) ;
     }
+    return $result;
 }
 
 function secureInput($input){

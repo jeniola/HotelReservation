@@ -28,7 +28,7 @@ if (isset($_POST['payNow'])) {
 
 	foreach ($_POST as $key => $value) {
 		if (empty($_POST[$key])) {
-			$error = "All fields are required";
+			$error = "Please fill out all  fields";
 			break;
 		}
 	}
@@ -46,7 +46,6 @@ if (isset($_POST['payNow'])) {
 		}
 	}
 
-	
 
 	if (empty($error)) {
 		$roomTypeQuery = "SELECT * FROM allrooms WHERE roomId = '{$roomTypeId}' ";
@@ -55,14 +54,19 @@ if (isset($_POST['payNow'])) {
 		while ($row = (mysqli_fetch_assoc($sendQuery))) {
 			$theRoomTypeId = $row['roomId'];
 			$roomType = $row['roomType'];
+			$roomPrice = $row['roomPrice'];
 		}
 
+		$amount = $roomPrice * $nights ;
+		
 		$referenceId = "LEX" . time();
 
-		// $query="INSERT INTO reservations (roomType, referenceId, bookingTime, firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress) ";
-		// $query.= "VALUES ('$roomTypeId', '$referenceId', now(), '$firstName', '$lastName', '$eMail',  '$phoneNumber', '$checkInDate', '$checkOutDate', '$nights', '$country', '$gender', '$residentialAddress')";
+		// $query="INSERT INTO reservations (roomType, referenceId, bookingTime, firstName, lastName, eMail, phoneNumber, checkInDate, checkOutDate, nights, country, gender, residentialAddress, amount) ";
+		// $query.= "VALUES ('$roomType', '$referenceId', now(), '$firstName', '$lastName', '$eMail',  '$phoneNumber', '$checkInDate', '$checkOutDate', '$nights', '$country', '$gender', '$residentialAddress', '$amount')";
 		// confirmQuery($query);
 		
+		// after payment, update payment status, amount paid
+		/** Amount paid should be  */
 	}
 
 }

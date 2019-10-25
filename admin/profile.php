@@ -39,7 +39,7 @@
         
         foreach ($_POST as $key => $value) {
             if (empty($_POST[$key])) {
-                $error = "All Fields are required";
+                $error = "Please fill out all fields";
                 break;
             }
         }

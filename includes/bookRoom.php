@@ -6,7 +6,11 @@
                 <p class="text-center text-primary personal">Personal Information</p>
               </h4>
               <?php if (!empty($error)) {?>
-                      <div class="alert alert-danger " role="alert"><?php if (isset($error)) echo $error; ?></div>
+                      <div class="alert alert-danger " role="alert"><?php if (isset($error)) echo $error; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
               <?php  } ?>
               <p class="card-text">
                 <form class="users" action="" method="post" autocomplete="off">
@@ -17,16 +21,25 @@
                     <div class="form-group col">
                       <input type="hidden" name="roomTypeId" class="form-control" value="<?php echo $theRoomId; ?>">
                     </div>
-
+                    
 
                   <?php 
+                    $roomTypeQuery = "SELECT * FROM  allRooms WHERE roomId = '{$theRoomId}' ";
+                    $sendQuery = confirmQuery($roomTypeQuery);
+
+                    while ($row = mysqli_fetch_assoc($sendQuery)) {
+                      $theRoomType = $row['roomType'];
+                    }
 
                   }
                 
                 ?>
-
-
-                  
+                  <div class="row">
+                    <div class="form-group col">
+                    <label for="roomType">Selected Room</label>
+                      <input type="text" disabled name="roomTypeId" class="form-control" value="<?php echo $theRoomType; ?>">
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="form-group col">
                       <label for="firstName">First Name</label>

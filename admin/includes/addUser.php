@@ -31,7 +31,7 @@
             if (!$sendInsertQuery) {
                 die("QUERY FAILED " . mysqli_error($connection));
             }else{
-                $success = "User Created <a href='users.php'>View Users</a> ";
+                $success = "User Created: <a href='users.php'>View Users</a> ";
             }
 
         }

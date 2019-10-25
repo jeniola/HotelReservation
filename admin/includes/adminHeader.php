@@ -14,7 +14,7 @@ ob_start();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>  
+  <title>  Admin
   <?php
                 if (isset($_GET['source'])) {
                   $title = $_GET['source'];
@@ -23,23 +23,23 @@ ob_start();
                 }
                 switch ($title) {
                   case 'currentReservation':
-                    echo "Current Reservation | Admin";
+                    echo "Admin &middot; Current Reservation";
                     break;
                   
                   case 'addUser';
-                    echo "Add User | Admin";
+                    echo "Admin &middot; Add User";
                     break;
                   
                   case 'addRoom';
-                    echo "Add Room | Admin";
+                    echo "Admin &middot; Add Room";
                     break;
 
                   case 'editRoom';
-                    echo "Edit Room | Admin";
+                    echo "Admin &middot; Edit Room";
                     break;
                   
                   case 'editUser';
-                    echo "Edit User | Admin";
+                    echo "Admin &middot; Edit User";
                     break;
 
 

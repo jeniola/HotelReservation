@@ -18,7 +18,7 @@
 
                         foreach ($_POST as $key => $value) {
                             if (empty($_POST[$key])) {
-                                $error = "All fields are required";
+                                $error = "Please fill out all fields";
                                 break;
                             }
                         }
@@ -45,8 +45,11 @@
                     <div class="card-body">
                     <?php
                         if (isset($error)) {?>
-                            <div class="form-group alert alert-danger">
+                            <div class="form-group alert alert-danger alert-dismissible fade show" role="alert">
                                 <?php if(isset($error)) {echo $error; } ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>  
+                                </button>
 
                             </div>
                         <?php }
@@ -78,4 +81,3 @@
       <!-- Footer -->
 
       <?php include 'includes/loginFooter.php'; ?>
-

@@ -23,7 +23,7 @@
 
                         foreach ($_POST as $key => $value) {
                             if (empty($_POST[$key])) {
-                                $error = "All fields are required";
+                                $error = "Please fill out all fields";
                                 break;
                             }
                         }
@@ -58,7 +58,9 @@
                         if (isset($error)) {?>
                             <div class="form-group alert alert-danger">
                                 <?php if(isset($error)) {echo $error; } ?>
-
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                         <?php }
 

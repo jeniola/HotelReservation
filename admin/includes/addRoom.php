@@ -33,7 +33,7 @@
             if (!$sendInsertQuery) {
                 die("QUERY FAILED " . mysqli_error($connection));
             }else {
-                $success = "Room Added <a href='rooms.php'>View Rooms</a>";
+                $success = "Room Added: <a href='rooms.php'>View Rooms</a>";
             }
 
 

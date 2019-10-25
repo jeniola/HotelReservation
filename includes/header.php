@@ -10,7 +10,37 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Lexus  Hotel </title>
+    <title> Lexus  Hotel 
+      <?php $url = $_SERVER['REQUEST_URI'];
+        switch ($url) {
+          case '/hotel/index.php':
+            echo "&middot; Home";
+            break;
+          
+          case '/hotel/about.php':
+            echo "&middot; About";
+            break;
+          
+          case '/hotel/contact.php':
+            echo "&middot; Contact";
+            break;
+          
+          case '/hotel/login.php':
+            echo "&middot; Login";
+            break;
+          
+          
+          default:
+            # code...
+            break;
+        }
+      
+      
+      
+      ?>
+
+    
+     </title>
 
     <!-- Bootstrap-4.3.1 core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
