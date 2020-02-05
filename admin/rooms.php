@@ -26,24 +26,28 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">
             <?php
-                if (isset($_GET['source'])) {
-                  $title = $_GET['source'];
-                }else{
-                   $title = "" ;
-                }
-                switch ($title) {
-                  case 'addRoom':
-                    echo "Add Room";
-                    break;
+                // if (isset($_GET['source'])) {
+                //   $title = $_GET['source'];
+                // }else{
+                //    $title = "" ;
+                // }
+                // switch ($title) {
+                //   case 'addRoom':
+                //     echo "Add Room";
+                //     break;
 
-                  case 'editRoom':
-                    echo "Edit Room";
-                    break;
+                //   case 'editRoom':
+                //     echo "Edit Room";
+                //     break;
+
+                //   case 'addRoomFeatures':
+                //     echo "Room Features";
+                //     break;
                   
-                  default:
-                    echo "Room";
-                    break;
-                }
+                //   default:
+                //     echo "Room";
+                //     break;
+                // }
               
               ?>                
           </h1>
@@ -71,7 +75,12 @@
                   
                   case 'editRoom':
                     include 'includes/editRoom.php';
-                  break;                
+                    break;                
+
+                  case 'addRoomFeatures':
+                    include 'includes/addRoomFeatures.php';
+                    break;                
+
                   default:
                     include 'includes/viewAllRooms.php';
                     break;

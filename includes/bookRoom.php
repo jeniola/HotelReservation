@@ -16,15 +16,11 @@
                 <form class="users" action="" method="post" autocomplete="off">
                 <!-- <form class="users" action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"> -->
                 <?php 
-                  if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId'] ?>
-                    
-                    <div class="form-group col">
-                      <input type="hidden" name="roomTypeId" class="form-control" value="<?php echo $theRoomId; ?>">
-                    </div>
+                  if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId']; ?>
                     
 
                   <?php 
-                    $roomTypeQuery = "SELECT * FROM  allRooms WHERE roomId = '{$theRoomId}' ";
+                    $roomTypeQuery = "SELECT * FROM  allrooms WHERE roomId = '{$theRoomId}' ";
                     $sendQuery = confirmQuery($roomTypeQuery);
 
                     while ($row = mysqli_fetch_assoc($sendQuery)) {
@@ -34,12 +30,6 @@
                   }
                 
                 ?>
-                  <div class="row">
-                    <div class="form-group col">
-                    <label for="roomType">Selected Room</label>
-                      <input type="text" disabled name="roomTypeId" class="form-control" value="<?php echo $theRoomType; ?>">
-                    </div>
-                  </div>
                   <div class="row">
                     <div class="form-group col">
                       <label for="firstName">First Name</label>
@@ -102,7 +92,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="submit" name="payNow" class="btn btn-primary form-control" value="Pay Now">
+                    <input type="submit" name="payNow" class="btn btn-primary form-control" value="Reserve Room">
                   </div>
                 </form>
               </p>

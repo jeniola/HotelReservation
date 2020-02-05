@@ -1,13 +1,13 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="container">
-        <a class="navbar-brand lexus" href="index.php">Lexus Hotel</a>
+        <a class="navbar-brand lexus" href="index.php">Express Hotel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
@@ -18,6 +18,10 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
+
           </ul>
         </div>
         

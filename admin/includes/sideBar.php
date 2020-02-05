@@ -23,7 +23,7 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-  Interface
+  Rooms Section
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
@@ -37,6 +37,7 @@
       <!-- <h6 class="collapse-header">Sections</h6> -->
       <a class="collapse-item" href="rooms.php">View All Rooms</a>
       <a class="collapse-item" href="rooms.php?source=addRoom">Add New Room</a>
+      <a class="collapse-item" href="rooms.php?source=addRoomFeatures">Add Room Features</a>
       <!-- <a class="collapse-item" href="rooms.php?source=adjustRoom">Adjust Room </a> -->
     </div>
   </div>
@@ -62,7 +63,7 @@
 
 <!-- Heading -->
 <div class="sidebar-heading">
-  Extra
+  Users Section
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->

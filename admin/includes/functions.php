@@ -15,6 +15,21 @@
         $count = mysqli_num_rows($sendQuery);
         echo $count;
     }
+    function usersRecordCount($table){
+        global $connection; 
+        $query = "SELECT * FROM $table";
+        $sendQuery = mysqli_query($connection, $query);
+        $count = mysqli_num_rows($sendQuery);
+        echo $count;
+    }
+
+    function availableRoomsRecordCount($table, $tableRow){
+        global $connection; 
+        $query = "SELECT * FROM $table WHERE $tableRow = 'available' ";
+        $sendQuery = mysqli_query($connection, $query);
+        $count = mysqli_num_rows($sendQuery);
+        echo $count;
+    }
 
     function secureInput($data){
         global $connection;

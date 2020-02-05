@@ -1,6 +1,6 @@
 <footer class="py-4 bg-dark fixed-bottom ">
       <div class="container">
-        <p class="m-0 text-center text-white "> <span class="footerr">Lexus Hotel</span> | Copyright &copy; <?php echo date("Y");?> </p>
+        <p class="m-0 text-center text-white "> <span class="footerr">Express Hotel</span> | Copyright &copy; <?php echo date("Y");?> </p>
       </div>
       <!-- /.container -->
 </footer>

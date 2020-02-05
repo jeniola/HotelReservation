@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Lexus  Hotel 
+    <title> Express  Hotel 
       <?php $url = $_SERVER['REQUEST_URI'];
         switch ($url) {
           case '/hotel/index.php':

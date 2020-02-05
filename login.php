@@ -1,4 +1,8 @@
-<?php include 'includes/header.php';?>
+<?php 
+    include 'includes/header.php';
+session_start();
+    
+?>
 
     <!-- carousel -->
 
@@ -8,10 +12,10 @@
     <div class="container">
         <h1 class="my-4"></h1>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <!-- <div id="googleMap" style="width:100%;height:400px;"></div> -->
             </div>
-            <div class="col-4">
+            <div class="col-6">
                 <br><br>
                 <?php
                     if (isset($_POST['submit'])) {
@@ -29,11 +33,36 @@
                         $username = secureInput($username);
                         $password = secureInput($password);
                         
-
-
                         if(empty($error)){
-                            echo $username;
-                            echo $password;
+
+                            $query = "SELECT * FROM users ";
+                            $sendQuery = confirmQuery($query);
+                            // $2y$10$7yRb4fx8t2gamrij6t0en.IJFgsHTOJpQ/kW/1ArHAOZ5AR1TK6LO
+                            
+                            while($row = mysqli_fetch_assoc($sendQuery)){
+                                $db_username = $row['userEmail'];
+                                $db_password = $row['userPassword'];
+                                $db_userFirstname = $row ['userFirstname'];
+                                $db_userImage = $row ['userImage'];
+                                $db_userRole = $row ['userRole'];
+                            }
+
+
+                            if ($username == $db_username && $password == $db_password) {
+                                $_SESSION['userFirstname'] = $db_userFirstname;
+                                $_SESSION['userImage'] = $db_userImage;
+                                $_SESSION['userRole'] = $db_userRole;
+                                
+                                
+                                header("Location:admin");
+                            
+                                // $userImage = $_SESSION['userImage'];
+
+                            }else{
+                                $error = "Invalid username or password";
+                            }
+                            // echo $username;
+                            // echo $password;
 
                         }
                         
@@ -71,8 +100,8 @@
                 </div>
                 <!-- end of card -->
             </div>
-            <!-- end of col-6 -->
-            <div class="col-4">
+            <!-- end of col-4 -->
+            <div class="col-3">
             </div>
         </div>
         <!-- end of row -->
