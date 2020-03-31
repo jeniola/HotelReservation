@@ -16,8 +16,7 @@
                 <form class="users" action="" method="post" autocomplete="off">
                 <!-- <form class="users" action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"> -->
                 <?php 
-                  if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId']; ?>
-                    
+                  if(isset($_GET['roomId'])){ $theRoomId = $_GET['roomId'];} ?>
 
                   <?php 
                     $roomTypeQuery = "SELECT * FROM  allrooms WHERE roomId = '{$theRoomId}' ";
@@ -25,11 +24,25 @@
 
                     while ($row = mysqli_fetch_assoc($sendQuery)) {
                       $theRoomType = $row['roomType'];
+                      $theRoomPrice = $row['roomPrice'];
                     }
-
-                  }
+                    
                 
                 ?>
+
+                  <!-- <div class="row"> -->
+                    <!-- <div class="form-group col"> -->
+                      <input type="hidden" class=" form-control form-control-lg" name="theRoomId" value="<?php if(isset($theRoomId)){echo $theRoomId;} ?>" >
+                      <input type="hidden" class=" form-control form-control-lg" name="theRoomPrice" value="<?php if(isset($theRoomPrice)){echo $theRoomPrice;} ?>" >
+                      
+                  <!-- </div> -->
+
+                  <div class="row">
+                    <div class="form-group col">
+                      <input type="text" class=" form-control form-control-lg" name="theRoomType" value="<?php if(isset($theRoomType)){echo $theRoomType;} ?>" readonly  >
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="form-group col">
                       <label for="firstName">First Name</label>
@@ -77,7 +90,7 @@
                     <div class="col">
                       <label for="gender">Gender</label>
                       <select name="gender" id="" class="form-control form-control-lg" value="<?php if(isset($gender)) echo $gender; ?>">
-                        <option value="">Choose</option>
+                        <option value="Male">Choose</option>
                         <option <?php if(isset($gender) && $gender=="Male"){?> selected <?php } ?> value="Male">Male</option>
                         <option <?php if(isset($gender) && $gender=="Female"){ ?> selected <?php } ?> value="Female">Female</option>
                         <option <?php if(isset($gender) && $gender=="Custom"){ ?> selected <?php } ?> value="Custom">Custom</option>
@@ -92,7 +105,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="submit" name="payNow" class="btn btn-primary form-control" value="Reserve Room">
+                    <input type="submit" name="payNow" class="btn btn-primary form-control" value="Pay Now">
                   </div>
                 </form>
               </p>

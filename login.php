@@ -1,7 +1,5 @@
 <?php 
     include 'includes/header.php';
-session_start();
-    
 ?>
 
     <!-- carousel -->
@@ -33,11 +31,13 @@ session_start();
                         $username = secureInput($username);
                         $password = secureInput($password);
                         
+                        // $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 10)); 
                         if(empty($error)){
 
                             $query = "SELECT * FROM users ";
                             $sendQuery = confirmQuery($query);
                             // $2y$10$7yRb4fx8t2gamrij6t0en.IJFgsHTOJpQ/kW/1ArHAOZ5AR1TK6LO
+
                             
                             while($row = mysqli_fetch_assoc($sendQuery)){
                                 $db_username = $row['userEmail'];

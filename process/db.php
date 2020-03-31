@@ -5,7 +5,7 @@ $db['user'] = 'root';
 $db['password'] = '';
 $db['name'] = 'hotel';
 
-
+// online db password:Q8I5CsaCi+jIagir 
 	foreach ($db as $key => $value) {
 		define(strtoupper($key), $value);
 	}
