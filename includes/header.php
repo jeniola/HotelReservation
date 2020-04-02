@@ -47,6 +47,9 @@
     <!-- Bootstrap-4.3.1 core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Font awesome -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
     <!-- Custom styles for this template -->
     <link href="css/2-col-portfolio.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">

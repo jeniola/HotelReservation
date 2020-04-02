@@ -1,7 +1,7 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#1E88E5">
       <div class="container">
-        <a class="navbar-brand lexus" href="index.php">Express Hotel</a>
+        <a class="navbar-brand express" href="index.php">Express Hotel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,11 +12,8 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <!-- <li class="nav-item ">
-              <a class="nav-link" href="#">About</a>
-            </li> -->
             <li class="nav-item ">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
             
             <?php 
@@ -31,12 +28,8 @@
                 </li>
               <?php }
             ?>
-            
-
           </ul>
         </div>
-        
       </div>
-      
     </nav>
   

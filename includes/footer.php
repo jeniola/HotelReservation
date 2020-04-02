@@ -1,4 +1,4 @@
-<footer class="py-4 bg-dark">
+<footer class="py-4" style="background-color:#1E88E5">
       <div class="container">
         <p class="m-0 text-center text-white "> <span class="footerr">Express Hotel</span> | Copyright &copy; <?php echo date("Y");?> </p>
       </div>
